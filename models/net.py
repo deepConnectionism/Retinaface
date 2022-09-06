@@ -91,7 +91,7 @@ class FPN(nn.Module):
         output2 = output2 + up3
         output2 = self.merge2(output2)
 
-        # up2 = F.interpolate(output2, size=[output1.size(2), output1.size(3)], mode="nearest")S
+        # up2 = F.interpolate(output2, size=[output1.size(2), output1.size(3)], mode="nearest")
         up2 = F.interpolate(output2, scale_factor=2, mode="nearest")
         output1 = output1 + up2
         output1 = self.merge1(output1)
